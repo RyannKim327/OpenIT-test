@@ -6,3 +6,4 @@ from django.db import models
 
 class User(AbstractUser):
     middle_name = models.CharField(max_length=25)
+    sex = models.CharField(max_length=10, default="male")
