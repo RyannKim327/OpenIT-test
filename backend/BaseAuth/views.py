@@ -1,3 +1,6 @@
+from rest_framework.exceptions import NotAuthenticated
+from rest_framework.response import Response
+from rest_framework.views import exception_handler
 from BaseAuth.mixins import CustomMixins
 from BaseAuth.paginator import BasicPaginator
 from rest_framework.permissions import IsAuthenticated
@@ -21,3 +24,15 @@ class BaseAuthViewset(ModelViewSet, CustomMixins):
                 else:
                     return self.extract_error_handler(value)
         return str(err)
+
+
+def custom_not_authorized(exc, context):
+    response = exception_handler(exc, context)
+    if isinstance(exc, NotAuthenticated):
+        return Response(
+            {
+                "error": "You are not autorized to gather information here",
+                "code": "Miss na kita baby ko, balik ka na please.",
+            }
+        )
+    return response

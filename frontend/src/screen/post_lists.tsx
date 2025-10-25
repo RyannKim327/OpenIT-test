@@ -5,8 +5,8 @@ export default function PostList() {
   const [postList, setPostList] = useState([]);
   useEffect(() => {
     (async () => {
-      const posts = await uget("post-lists");
-      setPostList(posts);
+      const posts = await uget("posts");
+      setPostList(posts.data);
     })();
   }, []);
   return (
@@ -19,9 +19,11 @@ export default function PostList() {
       ) : (
         postList.map((post) => {
           return (
-            <div>
+            <div className="shadow-gray-300 shadow-md p-2 m-2 rounded">
               <h1>{post.title}</h1>
-              <h3>{post.is_anonymous ? "Anonymous User" : post.user}</h3>
+              <h3 className="ml-4">
+                {post.is_anonymous ? "Anonymous User" : post.user_info.username}
+              </h3>
             </div>
           );
         })
