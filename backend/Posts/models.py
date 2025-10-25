@@ -11,6 +11,7 @@ class Post(BaseAuthModel):
     user = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="post_as_user"
     )
+    title = models.CharField(max_length=50, default="")
     content = models.TextField()
     as_anonymous = models.BooleanField(default=False)
     post_added = models.DateTimeField(auto_now_add=True)
