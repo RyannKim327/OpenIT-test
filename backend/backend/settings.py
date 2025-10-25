@@ -64,7 +64,7 @@ REST_FRAMEWORK = {
         "rest_framework_simplejwt.authentication.JWTAuthentication"
     ],
     "DEFAULT_PERMISSION_CLASSES": [],
-    "EXCEPTION_HANDLER": "",
+    "EXCEPTION_HANDLER": "BaseAuth.views.custom_not_authorized",
 }
 
 SIMPLE_JWT = {
@@ -98,7 +98,7 @@ SIMPLE_JWT = {
 }
 
 
-PRIMARY_HOST = "http://localhost:3000"
+PRIMARY_HOST = "http://localhost:5173"
 
 ALLOWED_HOSTS = ["*"]
 CORS_ALLOWED_HOST = ["*"]

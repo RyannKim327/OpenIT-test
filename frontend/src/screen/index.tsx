@@ -4,7 +4,7 @@ import Messages from "./messages";
 
 export default function Screen() {
   return (
-    <div className="w-full h-full bg-red-300">
+    <div className="w-full h-full">
       <Routes>
         <Route path="/" element={<PostList />} />
         <Route path="/messages" element={<Messages />} />

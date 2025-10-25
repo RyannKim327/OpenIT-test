@@ -12,8 +12,8 @@ const e = (url: string) => {
   if (!split_url.endsWith("/")) {
     split_url += "/";
   }
-  const params = url.split("?").length > 0 ? "?" + url.split("?")[1] : "";
-  return `${BASE_URL}/${split_url}/${params}`;
+  const params = url.split("?")[1] ? "?" + url.split("?")[1] : "";
+  return `${BASE_URL}/${split_url}${params}`;
 };
 
 const response = (data: json | json[], status: number) => {

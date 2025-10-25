@@ -20,11 +20,11 @@ class BasicPaginator(TenRowPaginator):
         end_entry = min(current * page_size, count)
 
         others = {}
-        if data.get("others"):
+        if "others" in data.keys():
             # TODO: To setup something from the source
             others = data.get("others")
 
-        if data.get("data"):
+        if "data" in data.keys():
             # TODO: To override the data from the given from the source
             data = data.get("data")
 
