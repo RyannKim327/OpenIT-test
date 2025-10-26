@@ -4,10 +4,8 @@ from Users.models import User
 
 # Create your models here.
 
-
 class Post(BaseAuthModel):
     order = "post_added"
-
     user = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="post_as_user"
     )

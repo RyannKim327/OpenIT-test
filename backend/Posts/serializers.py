@@ -25,3 +25,5 @@ class PostSerializer(ModelSerializer):
             return usr.data
         except:
             pass
+
+            

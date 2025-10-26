@@ -11,10 +11,8 @@ class BaseAuthModel(models.Model):
 
     def __init_subclass__(cls, **kwargs):
         if not hasattr(cls, "Meta"):
-
             class Meta:
                 pass
-
             cls.Meta = Meta
 
             if not hasattr(cls.Meta, "ordering"):
