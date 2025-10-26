@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     "Messages",
     "Posts",
     "Users",
+    "Notifications"
 ]
 
 MIDDLEWARE = [

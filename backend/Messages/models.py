@@ -5,9 +5,9 @@ from Users.models import User
 # Create your models here.
 
 
+
 class Message(BaseAuthModel):
     order = "date_added"
-
     user1 = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="messages_for_user1"
     )

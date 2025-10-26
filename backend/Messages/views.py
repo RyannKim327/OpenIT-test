@@ -20,9 +20,6 @@ class MessageViewset(ModelViewSet):
         self.queryset = self.queryset.filter(
             Q(user1=data.get("user"), user2=data.get("user"))
         )
-
         response_data = self.serializer_class(self.queryset.all(), many=True)
-
         return Response(response_data.data)
-
-        return super().list(request, *args, **kwargs)
+    
