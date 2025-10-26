@@ -1,10 +1,10 @@
-import Header from "./layout/header";
+import Navbar from "./layout/Navbar";
 import Screen from "./screen";
 
 export default function App() {
   return (
-    <div className="w-dvw h-dvh">
-      <Header />
+    <div>
+      <Navbar />
       <Screen />
     </div>
   );
