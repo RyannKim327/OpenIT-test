@@ -28,8 +28,6 @@ def new_comment(sender, instance, created,**kwargs):
 
     if not commenters.exists():
         return
-    
-    notif = Notification.objects.create(content=f"{commenter} also commented on {post.title}")
 
     for user in commenters:
         UserNotification.objects.create(user=user, notification=notif)
